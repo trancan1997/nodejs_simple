@@ -8,4 +8,11 @@ router.get("/", async (req, res, next) => {
   });
 });
 
+router.get("/home", async (req, res, next) => {
+  return res.status(200).json({
+    title: "Home",
+    message: "Ok",
+  });
+});
+
 module.exports = router;
