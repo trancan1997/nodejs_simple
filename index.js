@@ -1,25 +1,14 @@
-const express = require('express');
+// Import packages
+const express = require("express");
+const home = require("./routes/home");
 
+// Middlewares
 const app = express();
 app.use(express.json());
 
-const router = express.Router();
+// Routes
+app.use("/home", home);
 
-
-router.get("/", (req, res) => {
-    res.json({
-        hello: "hi! 123"
-    });
-});
-
-
-router.get("/link/:id([0-9]+)", (req, res) => {
-    res.json({
-        hello: "hi! 1234",
-        id: req?.params?.id
-    });
-});
-
-app.use('/', router);
-
-app.listen(9000, () => { });
+// connection
+const port = process.env.PORT || 9001;
+app.listen(port, () => console.log(`Listening to port ${port}`));
