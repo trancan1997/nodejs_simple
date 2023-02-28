@@ -11,7 +11,7 @@ router.get("/", async (req, res, next) => {
 router.get("/home", async (req, res, next) => {
   return res.status(200).json({
     title: "Home",
-    message: "Ok",
+    message: "Ok 123",
   });
 });
 
